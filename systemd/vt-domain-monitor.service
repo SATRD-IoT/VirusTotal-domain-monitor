@@ -1,0 +1,17 @@
+[Unit]
+Description=VirusTotal domain reputation monitor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/vt-domain-monitor
+EnvironmentFile=/etc/vt-domain-monitor.env
+ExecStart=/usr/bin/python3 /opt/vt-domain-monitor/vt_domain_monitor.py
+User=vt-monitor
+Group=vt-monitor
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/log/vt-domain-monitor

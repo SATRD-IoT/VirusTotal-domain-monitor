@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the VirusTotal domain reputation monitor daily
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+RandomizedDelaySec=15m
+Unit=vt-domain-monitor.service
+
+[Install]
+WantedBy=timers.target

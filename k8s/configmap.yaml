@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vt-domain-monitor
+data:
+  VT_DOMAINS: "example.org, your-gitlab.eu"
+  VT_ALERT_LOG: "/data/alerts.jsonl"
+  VT_DOMAIN_DELAY_SECONDS: "60"
+  VT_POLL_INTERVAL_SECONDS: "30"
+  VT_ANALYSIS_TIMEOUT_SECONDS: "900"
+  VT_HTTP_TIMEOUT_SECONDS: "30"
+  VT_MAX_HTTP_RETRIES: "4"
+  SMTP_HOST: "smtp.example.org"
+  SMTP_PORT: "587"
+  SMTP_SECURITY: "starttls"
+  SMTP_FROM: "monitor@example.org"
+  SMTP_RECIPIENTS: "security@example.org,admin@example.org"
